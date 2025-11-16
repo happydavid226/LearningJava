@@ -29,8 +29,10 @@ class Meta {
 
 public class Annotations1 {
     public static void main(String[] args){
+        System.out.println("Entered Main block");
         Meta ob = new Meta();
         Class<?> c = ob.getClass();
+
         try {
             Method m = c.getMethod("myMeth");
             MyAnn ann = m.getAnnotation(MyAnn.class);
@@ -47,7 +49,7 @@ public class Annotations1 {
         } catch(NoSuchMethodException e){
             System.out.println("Method is not found : " + e.getMessage());
         } catch(NullPointerException e){
-            System.out.println("The annotation is null : " + e.getMessage());
+            System.out.println("Hello");
         }
     }
 }
